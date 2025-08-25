@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b1a2eea29c8463d358ed6653429e2159&libraries=services"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css"/>
+  <title>먹방곡곡</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- 메인 컨테이너 -->
+  <div class="main-container">
+    <!-- 왼쪽 아이콘 메뉴 -->
+    <div class="icon-menu">
+      <button class="menu-icon logo">
+        <i class="fas fa-utensils"></i>
+      </button>
+      <button class="menu-icon" title="검색">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-icon" title="즐겨찾기">
+        <i class="fas fa-heart"></i>
+      </button>
+      <button class="menu-icon" title="설정">
+        <i class="fas fa-cog"></i>
+      </button>
+      <button class="menu-icon" title="정보">
+        <i class="fas fa-info-circle"></i>
+      </button>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar" id="sidebar">
+      <!-- 토글 버튼 -->
+      <button class="toggle-btn" id="toggleBtn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- 검색 섹션 -->
+      <div class="search-section">
+        <div class="search-container">
+          <input type="text" class="search-input" id="searchInput" placeholder="맛집을 검색해보세요">
+          <button class="search-btn" id="searchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 결과 섹션 -->
+      <div class="results-section">
+        <div class="results-header" id="resultsHeader">
+          맛집 목록
+        </div>
+        <div id="resultsList">
+          <!-- 검색 결과 담을 곳 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 지도 영역 -->
+    <div class="map-container">
+      <!-- 지도 위 카테고리 -->
+      <div class="map-category-section" id="mapCategorySection">
+        <button class="map-category-btn active" data-category="전체">전체</button>
+        <button class="map-category-btn" data-category="한식">🍚 한식</button>
+        <button class="map-category-btn" data-category="중식">🥢 중식</button>
+        <button class="map-category-btn" data-category="일식">🍣 일식</button>
+        <button class="map-category-btn" data-category="양식">🍝 양식</button>
+        <button class="map-category-btn" data-category="분식">🍜 분식</button>
+        <button class="map-category-btn" data-category="패스트푸드">🍔 패스트푸드</button>
+        <button class="map-category-btn" data-category="치킨">🍗 치킨</button>
+        <button class="map-category-btn" data-category="디저트">🍰 디저트</button>
+        <button class="map-category-btn" data-category="기타">🍽️ 기타</button>
+      </div>
+
+      <!-- 카카오맵 -->
+      <div id="map"></div>
+      
+      <!-- 상세 정보 패널 -->
+      <div class="info-panel" id="infoPanel">
+        <div class="info-panel-header">
+          <img class="info-panel-image" id="infoPanelImage" src="" alt="">
+          <button class="info-panel-close" id="infoPanelClose">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="info-panel-body">
+          <h3 class="info-panel-title" id="infoPanelTitle"></h3>
+          <p class="info-panel-address" id="infoPanelAddress"></p>
+          <a href="#" class="info-panel-link" id="infoPanelLink" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            상세보기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
